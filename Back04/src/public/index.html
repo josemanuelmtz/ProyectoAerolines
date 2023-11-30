@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website.com</title>
+</head>
+<body>
+    <button id="checkout">Cargando</button>
+
+    <script>
+        const checkout = document.getElementById("checkout");
+
+        function performCheckout() {
+            // Aquí colocas el código que deseas ejecutar al hacer clic en el botón o al cargar la página.
+            // Por ejemplo, puedes mantener el código actual que utiliza fetch.
+
+            // Simulamos un clic en el botón "Checkout!" al cargar la página.
+            checkout.click();
+        }
+
+        // Ejecutamos la función cuando se carga la página.
+        window.addEventListener("load", performCheckout);
+
+        checkout.addEventListener("click", async () => {
+            const response = await fetch("/create-order", {
+                method: "POST",
+            });
+            const data = await response.json();
+            window.location.href = data.links[1].href;
+        });
+    </script>
+</body>
+</html>

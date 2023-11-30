@@ -1,0 +1,84 @@
+
+<head>
+  <title>Reserva de Vuelo</title>
+</head>
+<link rel="stylesheet" href="reservas.component.css">
+<nav>
+  <a href="home-u">Inicio</a>
+  <a href="reservas">Reservas</a>
+  <a href="historial">Historial</a>
+</nav>
+<h1>Reserva de Vuelo</h1>
+
+<form id="filtroVueloForm" class="form" [formGroup]="vuelosForm" (ngSubmit)="vuelos()">
+  <label for="origen">Origen:</label>
+  <select for="origen" name="origen" formControlName="origen">
+   <option value="" disabled selected>Seleccione una opción</option>
+   <option for="origen" *ngFor="let origen of origenes">{{ origen.origen }}</option>
+  </select>
+
+  <label for="destino">Destino:</label>
+  <select for="destino" name="destino" formControlName="destino">
+    <option value="" disabled selected>Seleccione una opción</option>
+    <option for="destino" *ngFor="let destino of destinos">{{ destino.destino }}</option>
+  </select><br><br>
+
+  <label for="fecha">Fecha de Viaje:</label>
+  <input value="fecha.value" type="date" name="fecha" formControlName="fecha">
+  <br><br>
+
+  <button type="submit" id="buscarVueloButton">Buscar Vuelo</button>
+  <p>¿Necesitas gestionar tus reservas? <a href="gestion-reserva">Haz clic aquí</a></p>
+</form>  
+
+<table id="tablaVuelos" *ngIf="buscadores.length > 0">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Origen</th>
+      <th>Destino</th>
+      <th>Fecha</th>
+      <th>Precio</th>
+      <th>Tipo de Avión</th>
+      <th>Detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let filtro of buscadores">
+      <td>{{ filtro.id_vuelos }}</td>
+      <td>{{ filtro.origen }}</td>
+      <td>{{ filtro.destino }}</td>
+      <td>{{ filtro.fecha_vuelos | date:'dd/MM/yyyy'}}</td>
+      <td>{{ filtro.costo }}</td>
+      <td>{{ filtro.tipo_avion }}</td>
+      <td>
+        <button (click)="detalleVuelos(filtro.id_vuelos)">
+          {{ detalleSeleccionado && detalleSeleccionado.id == filtro.id_vuelos ? 'Ocultar detalles' : 'Mostrar detalles' }}
+        </button>
+      </td>
+      <tr *ngFor="let detalle of detalleSeleccionado">
+        <td colspan="8">
+          <div *ngIf="detalle">
+            
+            <p>Empresa: {{ detalle.nombre_empresa }}</p>
+            <p>Origen: {{ detalle.origen }}</p>
+            <p>Destino: {{ detalle.destino }}</p>
+            <p>Costo: {{ detalle.costo }}</p>
+            <p>Hora de llegada: {{ detalle.hora_salida }}</p>
+            <p>Fecha salida: {{ detalle.fecha_vuelos | date:'dd/MM/yyyy'}}</p>
+            <p>Nombre del servicio: {{ detalle.nombre_servicio }}</p>
+            <p>Descripción del servicio: {{ detalle.descripcion_servicio }}</p>
+            <p><button style="color: white; background-color: red; border-radius: 1vb; border-color: white;" (click)="detalleVuelos(null)">Cerrar</button></p>
+            <p><button style="color: white; background-color: #0056b3; border-radius: 1vb; border-color: white;"(click)="createReservaFromDetalle(detalle)" id="checkout" onclick="window.open('http://localhost:3004', '_blank')">Reservar</button></p>
+            <script>
+              const checkout = document.getElementById("checkout");
+              checkout.addEventListener("click", () => {
+                window.location.href = "http://localhost:3004";
+              });
+            </script>
+          </div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+

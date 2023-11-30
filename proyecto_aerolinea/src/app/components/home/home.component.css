@@ -1,0 +1,525 @@
+/* Estilo para la barra de navegación */
+.main-menu-container {
+    background-color: #333; /* Color de fondo */
+    text-align: center; /* Alineación del texto en el centro */
+}
+
+/* Estilo para la lista no ordenada (ul) */
+.main-menu-container ul {
+    list-style: none; /* Elimina los puntos de lista */
+    padding: 0;
+}
+
+/* Estilo para los elementos de la lista (li) */
+.main-menu-container ul li {
+    display: inline; /* Mostrar elementos en línea */
+    margin-right: 20px; /* Espacio entre elementos */
+}
+
+/* Estilo para los enlaces (a) */
+.main-menu-container ul li a {
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    color: #fff; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Cambiar el color del texto en el estado hover (al pasar el mouse) */
+.main-menu-container ul li a:hover {
+    color: #ff6600;
+}
+.main-menu-container {
+    background-color: #333; /* Color de fondo de la barra de navegación */
+    padding: 10px 0; /* Espaciado interior de la barra de navegación */
+}
+
+/* Estilo de los elementos del menú */
+.main-menu-container ul#main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu-container ul#main-menu li {
+    display: inline;
+    margin-right: 20px; /* Espacio entre elementos del menú */
+}
+
+.main-menu-container ul#main-menu li a {
+    text-decoration: none;
+    color: #fff; /* Color del texto del enlace */
+    font-weight: bold;
+}
+
+.main-menu-container ul#main-menu li a:hover {
+    color: #ff9900; /* Cambio de color al pasar el ratón por encima */
+}
+
+/* Estilo de los submenús desplegables */
+.main-menu-container ul.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #333; /* Color de fondo de los submenús */
+    list-style: none;
+    padding: 10px;
+}
+
+.main-menu-container ul#main-menu li:hover ul.sub-menu {
+    display: block;
+}
+
+.main-menu-container ul.sub-menu li {
+    display: block;
+    margin: 10px 0;
+}
+
+.main-menu-container ul.sub-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+.footable>thead>tr>th,
+        .footable>thead>tr>td,
+        .footable>tfoot>tr>th,
+        .footable>tfoot>tr>td {
+            background-color: #6f6f6f;
+            border: 1px solid #6f6f6f;
+        }
+
+        .footable {
+            border: 3px solid #6f6f6f;
+        }
+
+        .tablepress thead th div {
+            float: left;
+        }
+
+        #lang_sel_list {
+            width: 100%;
+        }
+
+        #lang_sel_list ul {
+            border: none;
+            display: inline;
+        }
+
+        #lang_sel_list ul a,
+        #lang_sel_list ul a:visited {
+            background: transparent;
+            border: none;
+            font-size: 0;
+        }
+        /*------------------------------------------------------------
+ * CUSTOM BACKGROUND STYLE BASED ON THEME OPTION PAGE CHOICES
+ * ----------------------------------------------------------*/
+
+        body {
+            background-image: url(http://www.aicm.com.mx/wp-content/themes/aicm/images/bg/small_squares.png);
+            background-repeat: repeat;
+        }
+
+
+
+
+
+
+        /*------------------------------------------------------------
+ * Custom background setting 
+ * ----------------------------------------------------------*/
+        /* set custom background if its set in theme options */
+        body {
+            background-color: #f2f2f2;
+            background-image: none;
+            background-repeat: repeat;
+            background-position: top center;
+            background-attachment: scroll;
+        }
+
+        /*------------------------------------------------------------
+ * Custom page title background setting 
+ * ----------------------------------------------------------*/
+
+        /*------------------------------------------------------------
+ * LAYOUT WIDTH
+ * ----------------------------------------------------------*/
+
+        #wrapper {
+            max-width: 1170px;
+        }
+
+        /*------------------------------------------------------------
+ *  BACKGROUND RELATED COLOR SCHEMES 
+ * ----------------------------------------------------------*/
+
+        #page-title,
+        #highlighted-box .inner,
+        .round-dropcap,
+        .icomp-read-more,
+        #colorful-block,
+        .btn.btn-theme,
+        .btn-group.open .btn-theme.dropdown-toggle,
+        .btn-theme:focus,
+        .btn-theme:active,
+        .btn.btn-theme:hover,
+        .caption-box,
+        .theme-scheme,
+        .fontawesome-icon.color-theme.style-circle,
+        #feedback-link:hover {
+            background-color: #002b4d;
+        }
+
+        .widget .side-navigation li a:active,
+        .widget .side-navigation li a:focus,
+        .widget .side-navigation li a.active {
+            background-color: #002b4d;
+        }
+
+        /* portfolio hover */
+
+        .portfolio-caption-text {
+            background-color: #5c7896;
+        }
+
+        /* tabs 
+.nav-tabs > li.active{
+	border-top:1px solid #002745 !important ;
+	border-left:1px solid #002745 !important ;
+	border-right:1px solid #002745 !important ;
+}
+*/
+
+
+
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:hover,
+        ul.plan li.head {
+
+            border-top: 1px solid #0c61a4;
+            border-left: 1px solid #0c61a4;
+            border-right: 1px solid #0c61a4;
+            border-bottom: none;
+            background: #0c61a4;
+
+        }
+
+        .tab-content {
+            border-top: 2px solid #002b4d;
+        }
+
+        /*
+ border-top:1px solid #002745;
+	border-left:1px solid #002745;
+	border-bottom:1px solid #002745;
+ */
+        .tabs left {
+            border-top: 1px solid #0c61a4 !important;
+            border-left: 1px solid #0c61a4 !important;
+            border-right: 1px solid #0c61a4 !important;
+        }
+
+        .tabs-left>.nav-tabs>li.active>a,
+        .tabs-left>.nav-tabs>li.active>a:hover {
+            border-top: 1px solid #859aaa;
+            border-left: 1px solid #859aaa;
+            border-bottom: 1px solid #859aaa;
+
+            border-right: none;
+            background: #002b4d;
+            /* Old browsers */
+            /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+            background: -moz-linear-gradient(top, #40607a 0%, #002b4d 75%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #40607a), color-stop(75%, #002b4d));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #40607a 0%, #002b4d 75%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #40607a 0%, #002b4d 75%);
+            /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #40607a 0%, #002b4d 75%);
+            /* IE10+ */
+            background: linear-gradient(to bottom, #40607a 0%, #002b4d 75%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+            /* IE6-8 */
+        }
+
+        .tabs-left .tab-content {
+            border-left: 2px solid #002b4d;
+        }
+
+        /* tabs right 
+.tabs-right .nav-tabs > li.active{
+	border-top:1px solid #002745;
+	border-bottom:1px solid #002745;
+	border-right:1px solid #002745;
+}
+
+.tabs-right .nav-tabs > li.active > a, .tabs-right .nav-tabs > li.active > a:hover {
+	border-top:1px solid #859aaa;
+	border-bottom:1px solid #859aaa;
+	border-right:1px solid #859aaa;
+}
+*/
+
+
+
+
+
+        .tabs-right .tab-content {
+            border-right: 2px solid #002b4d;
+        }
+
+        /*------------------------------------------------------------
+ *  Schemes for rev slider
+ * ----------------------------------------------------------*/
+
+        [class^="icompany_colorFramed"],
+        [class*="icompany_colorFramed"] {
+            background-color: rgba(0, 43, 77, 0.65) !important;
+        }
+
+        /*------------------------------------------------------------
+ *  SHADOWS
+ * ----------------------------------------------------------*/
+        .shadow-transition:hover,
+        .btn-theme:hover {
+            -webkit-box-shadow: 0px 0px 9px rgba(0, 43, 77, 0.8);
+            -moz-box-shadow: 0px 0px 9px rgba(0, 43, 77, 0.8);
+            box-shadow: 0px 0px 9px rgba(0, 43, 77, 0.8);
+        }
+
+        /*bootstrap line 1194 */
+        textarea:focus,
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="datetime"]:focus,
+        input[type="datetime-local"]:focus,
+        input[type="date"]:focus,
+        input[type="month"]:focus,
+        input[type="time"]:focus,
+        input[type="week"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="color"]:focus,
+        .uneditable-input:focus {
+            border-color: rgba(0, 43, 77, 0.8);
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 43, 77, 0.6);
+            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 43, 77, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 43, 77, 0.6);
+        }
+
+        /*------------------------------------------------------------
+ *  BORDER RELATED COLOR SCHEMES
+ * ----------------------------------------------------------*/
+        .sf-menu li.sfHover ul,
+        .border-color {
+            border-color: #002b4d;
+        }
+
+        #highlighted-box .inner,
+        #colorful-block {
+            border-color: #40607a;
+        }
+
+        .animated-border,
+        .video-portfolio-caption {
+            border-color: #668094;
+        }
+
+
+        @media screen and (max-width: 767px) {
+
+            #right-sidebar,
+            #left-sidebar {
+                border-color: #002b4d;
+            }
+        }
+
+        ul.plan li.head {
+            border-top: 1px solid #002b4c;
+        }
+
+        .pricing-table div.ptable:first-child li.head {
+            border-left: 1px solid #002b4c;
+        }
+
+        .pricing-table div.ptable:last-child li.head,
+        .pricing-table div.ptable:nth-last-child(-n+1)>ul.plan>li.head {
+            border-right: 1px solid #002b4c;
+        }
+
+        ul.plan li.head {
+            border-right: none;
+            border-left: 1px solid #40607a;
+            box-shadow: -1px 0 0 0 rgba(0, 0, 0, .07) inset;
+        }
+
+        /*------------------------------------------------------------
+ *  TEXT COLORS 
+ * ----------------------------------------------------------*/
+
+        .color {
+            color: #002b4d
+        }
+
+        .fontawesome-icon.color-theme {
+            color: #002b4d
+        }
+
+        ul.bullet .icon-circle-arrow-right.bullet-list-icon {
+            color: #40607a
+        }
+
+        /*------------------------------------------------------------
+ *  LINKS COLOR
+ * ----------------------------------------------------------*/
+        a,
+        .rev_slider_wrapper a {
+            color: #002b4d;
+        }
+
+        #footer-region a {
+            color: #002b4d;
+        }
+
+
+        h1,
+        .title-icomp-front a,
+        .heading,
+        .checks-large {
+            font-family: Lato, Helvetica, arial, verdana;
+            font-weight: 300;
+            font-size: 30px;
+            color: #002b4d;
+        }
+
+        h2 {
+            font-family: Lato, Helvetica, arial, verdana;
+            font-weight: 300;
+            font-size: 24px;
+            color: #002b4d;
+        }
+
+        h3 {
+            font-family: Lato, Helvetica, arial, verdana;
+            font-weight: 300;
+            font-size: 18px;
+            color: #002b4d;
+        }
+
+        h4 {
+            font-family: Lato, Helvetica, arial, verdana;
+            font-weight: 300;
+            font-size: 16px;
+            color: #002b4d;
+        }
+
+        h5 {
+            font-family: Lato, Helvetica, arial, verdana;
+            font-weight: 300;
+            font-size: 14px;
+            color: #002b4d;
+        }
+
+        #icompany-slider .slide-title,
+        .tp-caption.icompany_style,
+        #icompany-slider .rev_slider {
+            font-family: Lato, Helvetica, arial, verdana;
+            font-weight: 300;
+            font-size: 30px;
+        }
+
+        #icompany-slider,
+        .tp-caption.icompany_text_sitewide_font {
+            font-family: PT Sans, Helvetica, arial, verdana;
+            font-weight: normal;
+            font-size: 13px;
+        }
+
+        #main-menu {
+            font-family: Lato, Helvetica, arial, verdana;
+            font-weight: 300;
+            font-size: 16px;
+            color: #6f6f6f;
+        }
+
+        body {
+            font-family: PT Sans, Helvetica, arial, verdana;
+            font-weight: normal;
+            font-size: 14px;
+            color: #6f6f6f;
+        }
+
+        /* Font size for mobile devices */
+        @media screen and (max-width: 767px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            h4 {
+                font-size: 20px;
+            }
+
+        }
+
+
+
+
+
+
+        /*------------------------------
+ * Wrapper's top border
+ * -----------------------------*/
+
+        #page-wrapper {
+
+            border-color: #002b4d;
+
+        }
+
+        /*------------------------------
+ * Site header setup
+ * -----------------------------*/
+
+        #header {
+            min-height: 110px;
+        }
+
+        .site_logo {
+            margin-top: -30px;
+            margin-left: 0px;
+        }
+
+        .main-menu-container {
+            margin-top: 40px;
+        }
+
+
+        /*------------------------------
+ *  Custom Page bg setup
+ * -----------------------------*/
+
+
+        /*------------------------------
+ *  Custom Page title bg setup
+ * -----------------------------*/
+
+
+        /*------------------------------
+ * Misc
+ * -----------------------------*/
+
+        .ei-slider {
+            height: 100px;
+        }
+    

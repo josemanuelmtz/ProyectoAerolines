@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reserva de Vuelo</title>
+</head>
+<body>
+    <h1>Reserva de Vuelo</h1>
+    <!--<img src="avion.png" alt="Imagen de un avión">-->
+    <label for="origen">Origen:</label>
+    <select id="origen" name="origen" required>
+        <option value="" disabled selected>Seleccione una opción</option>
+        <option value="nueva-york">Nueva York</option>
+        <option value="los-angeles">Los Ángeles</option>
+        <option value="miami">Miami</option>
+        <!-- Agrega más opciones aquí -->
+    </select><br><br>
+
+    <label for="destino">Destino:</label>
+    <select id="destino" name="destino" required>
+        <option value="" disabled selected>Seleccione una opción</option>
+        <option value="londres">Londres</option>
+        <option value="paris">París</option>
+        <option value="tokio">Tokio</option>
+    </select><br><br>
+
+    <label for="fecha">Fecha de Viaje:</label>
+    <input type="date" id="fecha" name="fecha" required><br><br>
+
+    <input type="submit" value="Buscar Vuelo" id="buscarVueloButton">
+    <br>
+
+    <p>¿Necesitas gestionar tus reservas? <a href="gestion-reserva">Haz clic aquí</a></p>
+
+    <!-- Tabla oculta para mostrar vuelos -->
+    <table id="tablaVuelos" style="display: none;">
+        <thead>
+            <tr>
+                <th>Vuelo</th>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí puedes agregar filas con los vuelos disponibles -->
+        </tbody>
+    </table>
+
+    <script>
+        // Función para mostrar la tabla de vuelos al hacer clic en el botón
+        document.getElementById("buscarVueloButton").addEventListener("click", function() {
+            document.getElementById("tablaVuelos").style.display = "table"; // Muestra la tabla
+        });
+    </script>
+    
+</body>
+</html>

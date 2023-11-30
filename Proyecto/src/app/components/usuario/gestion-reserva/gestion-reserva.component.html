@@ -1,0 +1,32 @@
+    <link rel="stylesheet" href="gestion-reserva.component.css">
+    <nav>
+      <a href="home-u">Inicio</a>
+      <a href="reservas">Reservas</a>
+      <a href="historial">Historial</a>
+    </nav>
+    <h1>Gestión de Reservas de Vuelos</h1>
+    <h2>Reservas Actuales</h2>
+    <button style="color: white; background-color: #0056b3; border-radius: 1vb; border-color: white;" (click)="reservas(id_usuario)">
+      Ver reservas</button>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Reserva</th>
+          <th>Fecha de Reserva</th>
+          <th>ID usuario</th>
+          <th>Costo</th>
+          <th>Cancelar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservas of reservasS">
+          <td>{{ reservas.id_reserva }}</td>
+          <td>{{ reservas.fecha_reserva | date:'dd/MM/yyyy' }}
+          </td>
+          <td>{{ reservas.id_usuario }}</td>
+          <td>{{ reservas.pago }}</td>
+          <td><button style="color: white; background-color: red; border-radius: 1vb; border-color: white;"(click)="cancelReserva(reservas.id_reserva)">Cancelar</button></td>
+        </tr>
+      </tbody>
+    </table>    
+

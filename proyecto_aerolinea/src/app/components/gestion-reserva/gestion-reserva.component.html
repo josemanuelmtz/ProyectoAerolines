@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestión de Reservas de Vuelos</title>
+</head>
+<body>
+    <h1>Gestión de Reservas de Vuelos</h1>
+    
+    <h2>Reservas Actuales</h2>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Origen</th>
+            <th>Destino</th>
+            <th>Fecha de Viaje</th>
+            <th>Asientos</th>
+            <th>Actualizar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>Nueva York</td>
+            <td>Londres</td>
+            <td>2023-11-15</td>
+            <td>2</td>
+            <td>
+                <button onclick="actualizarReserva(1)">Actualizar</button>
+            </td>
+            <td>
+                <button onclick="eliminarReserva(1)">Eliminar</button>
+            </td>
+        </tr>
+        <!-- Agrega más filas de reserva aquí -->
+    </table>
+    <script>
+        // Funciones para actualizar y eliminar reservas (debes implementar la lógica correspondiente)
+        function actualizarReserva(id) {
+            // Agrega aquí la lógica para actualizar la reserva con el ID especificado
+            alert("Actualizar reserva con ID: " + id);
+        }
+
+        function eliminarReserva(id) {
+            // Agrega aquí la lógica para eliminar la reserva con el ID especificado
+            alert("Eliminar reserva con ID: " + id);
+        }
+    </script>
+</body>
+</html>

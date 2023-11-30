@@ -1,0 +1,148 @@
+CREATE DATABASE Proyecto;
+USE Proyecto;
+CREATE TABLE usuario (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50),
+    contrasena VARCHAR(100),
+    rol INT DEFAULT 0
+);
+CREATE TABLE empresa (
+    id_empresa INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100),
+    estatus TINYINT(1) DEFAULT '1',
+    correo VARCHAR(50),
+    direccion VARCHAR(50),
+    telefono VARCHAR(50),
+    poli_condi VARCHAR(100),
+    id_usuario INT,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+);
+
+CREATE TABLE ciudad (
+    id_cuidad INT PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(50)
+);
+CREATE TABLE servicio (
+    id_servicio INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50),
+	descripcion VARCHAR(100)
+);
+CREATE TABLE calendario_vuelos (
+    id_vuelos INT PRIMARY KEY AUTO_INCREMENT,
+    id_empresa INT,
+	id_servicio INT,
+    origen VARCHAR(50),
+    destino VARCHAR(50),
+    hora_salida TIME,
+    asientos_dis INT,
+    fecha_vuelos DATETIME,
+    tipo_avion VARCHAR(50),
+    costo DECIMAL(10, 2),
+    FOREIGN KEY (id_empresa) REFERENCES empresa(id_empresa),
+	FOREIGN KEY (id_servicio) REFERENCES servicio(id_servicio)
+);
+
+CREATE TABLE reserva (
+    id_reserva INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario INT,
+    id_vuelos INT,
+    fecha_reserva DATE,
+    pago DECIMAL(10, 2),
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+    FOREIGN KEY (id_vuelos) REFERENCES calendario_vuelos(id_vuelos)
+);
+
+
+
+DROP DATABASE Proyecto;
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'juan';
+FLUSH PRIVILEGES;
+
+-- Inserciones en la tabla "usuario"
+INSERT INTO usuario (id_usuario, usuario, contrasena, rol)
+VALUES (1, 'Usuario', '1234', 0);
+INSERT INTO usuario (id_usuario, usuario, contrasena, rol)
+VALUES (2, 'Empresa', '1234', 1);
+INSERT INTO usuario (id_usuario, usuario, contrasena, rol)
+VALUES (3, 'Empresa2', '1234', 1);
+
+
+INSERT INTO `ciudad`
+(`nombre`)
+VALUES
+("CDMX"),
+("Cancun"),
+("Guadalajara"),
+("Monterrey"),
+("Tijuana"),
+("Puerto Vallarta"),
+("Merida"),
+("Los Cabos"),
+("Toluca"),
+("Veracruz"),
+("Acapulco"),
+("Oaxaca"),
+("Puebla"),
+("Queretaro"),
+("Chihuahua");
+
+
+INSERT INTO `empresa`
+(`nombre`,
+`correo`,
+`direccion`,
+`telefono`,
+`poli_condi`,
+`id_usuario`)
+VALUES
+("Aeromexico",
+"aeromexico@email.com",
+"Calle #1",
+"5552361489",
+"Politicas y condiciones del vuelo",
+2);
+
+INSERT INTO `servicio`
+(`nombre`,
+`descripcion`)
+VALUES
+("Basico",
+"Incluye 1 comida y un antifaz");
+
+INSERT INTO `calendario_vuelos`
+(`id_empresa`,
+`id_servicio`,
+`origen`,
+`destino`,
+`hora_salida`,
+`asientos_dis`,
+`fecha_vuelos`,
+`tipo_avion`,
+`costo`)
+VALUES
+(1, 1, "CDMX", "Acapulco", "13:30", 25, "2024-05-12", "Airbus A340", 1500.00),
+(1, 1, "Acapulco", "CDMX", "08:30", 25, "2024-05-10", "Airbus A340", 1500.00),
+(1, 1, "Monterrey", "Puebla", "13:30", 25, "2024-05-12", "Airbus A340", 1500.00),
+(1, 1, "CDMX", "Cancun", "14:00", 30, "2024-05-15", "Boeing 737", 1200.00),
+(1, 1, "Cancun", "Guadalajara", "16:30", 40, "2024-05-20", "Airbus A320", 1300.00),
+(1, 1, "Guadalajara", "Monterrey", "10:15", 35, "2024-05-25", "Boeing 777", 1400.00),
+(1, 1, "Monterrey", "Tijuana", "12:45", 45, "2024-05-30", "Airbus A380", 1500.00),
+(1, 1, "Tijuana", "Puerto Vallarta", "09:20", 25, "2024-06-05", "Embraer E-Jet", 1100.00),
+(1, 1, "Puerto Vallarta", "Merida", "13:10", 30, "2024-06-10", "Bombardier CRJ", 1050.00),
+(1, 1, "Merida", "Los Cabos", "15:40", 40, "2024-06-15", "McDonnell Douglas MD-80", 1250.00),
+(1, 1, "Los Cabos", "Toluca", "11:30", 35, "2024-06-20", "Airbus A330", 1350.00),
+(1, 1, "Toluca", "Veracruz", "16:00", 25, "2024-06-25", "Boeing 787 Dreamliner", 1400.00),
+(1, 1, "Veracruz", "Acapulco", "12:20", 30, "2024-07-01", "Boeing 767", 1250.00),
+(1, 1, "Acapulco", "Oaxaca", "14:50", 35, "2024-07-05", "Boeing 757", 1300.00),
+(1, 1, "Oaxaca", "Puebla", "10:40", 25, "2024-07-10", "Airbus A340", 1200.00),
+(1, 1, "Puebla", "Queretaro", "17:00", 40, "2024-07-15", "Boeing 717", 1350.00),
+(1, 1, "Queretaro", "Chihuahua", "11:15", 30, "2024-07-20", "Airbus A350", 1400.00),
+(1, 1, "CDMX", "Cancun", "14:00", 30, "2024-07-25", "Boeing 737", 1200.00),
+(1, 1, "Cancun", "Guadalajara", "16:30", 40, "2024-07-30", "Airbus A320", 1300.00);
+
+select * from servicio;
+select * from empresa;
+select * from reserva;
+select * from calendario_vuelos;
